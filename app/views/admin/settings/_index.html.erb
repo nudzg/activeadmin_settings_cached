@@ -10,7 +10,7 @@
       <tbody>
         <% ActiveadminSettingsCached.settings.each_pair do |name, value| %>
           <tr class="odd">
-            <td><strong><%= f.label t("settings.attributes.#{name}.name", default: name) %></strong></td>
+            <td><strong><%= f.label name, t("settings.attributes.#{name}.name", default: name) %></strong></td>
             <td>
               <div class='form'>
                 <ol><%= f.input name, settings_field_options(name) %></ol>
