@@ -12,7 +12,7 @@ module ActiveadminSettingsCached
     private
 
     def settings_params
-      params.require(:settings).permit(settings_model.defaults.keys)
+      params.require(:settings).permit(settings_model.defaults.keys - ActiveadminSettingsCached.config.excluded)
     end
 
     def settings_model
